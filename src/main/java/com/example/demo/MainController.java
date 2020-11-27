@@ -20,10 +20,12 @@ return mv;
 @RequestMapping(value="/", method=RequestMethod.POST)
 public ModelAndView indexPost(ModelAndView mv, @RequestParam("nameVal")String
 name,
-@RequestParam("ageVal")String age, @RequestParam("heightVal")String height){
+@RequestParam("ageVal")int age, @RequestParam("heightVal")String height, 
+@RequestParam("birthPlaceVal")String birthPlace){
 mv.addObject("name", name);
-mv.addObject("age", age);
+mv.addObject("age", age-3);
 mv.addObject("height", height);
+mv.addObject("birthPlace", birthPlace);
 mv.setViewName("index");
 return mv;
 }
