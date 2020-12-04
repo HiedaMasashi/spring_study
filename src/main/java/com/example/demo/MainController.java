@@ -52,4 +52,18 @@ mv.setViewName("kaijo");
 return mv;
 }
 
+@RequestMapping(value="/if", method=RequestMethod.GET)
+public ModelAndView ifGet(ModelAndView mv) {
+mv.addObject("suzuki",5);
+mv.setViewName("if");
+return mv;
+}
+
+@RequestMapping(value="/if", method=RequestMethod.POST)
+public ModelAndView ifPost(ModelAndView mv) {
+mv.addObject("suzuki","off");
+mv.setViewName("if");
+return mv;
+}
+
 }

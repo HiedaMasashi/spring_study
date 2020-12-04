@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link th:href="@{/css/index.css}" rel="stylesheet">
 </head>
 <body>
-	<h2 th:text="${number}"></h2>
+	<h1 th:text="${number}"></h1>
 	
 	<form action="/kaijo" method="POST">
 		<label><br>階乗したい値を入れてください</label><input type="text" name="numberVal">
