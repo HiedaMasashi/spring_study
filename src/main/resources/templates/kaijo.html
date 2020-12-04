@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2 th:text="${number}"></h2>
+	
+	<form action="/kaijo" method="POST">
+		<label><br>階乗したい値を入れてください</label><input type="text" name="numberVal">
+		<input type="submit", value="送信">
+	</form>
+</body>
+</html>

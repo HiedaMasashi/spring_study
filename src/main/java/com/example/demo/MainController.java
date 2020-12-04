@@ -30,4 +30,26 @@ mv.setViewName("index");
 return mv;
 }
 
+@RequestMapping(value="/kaijo", method=RequestMethod.GET)
+public ModelAndView indexGet1(ModelAndView mv){
+mv.addObject("number", "階乗の計算をします。");
+
+mv.setViewName("kaijo");
+return mv;
+}
+
+@RequestMapping(value="/kaijo", method=RequestMethod.POST)
+public ModelAndView indexPost1(ModelAndView mv, @RequestParam("numberVal")int
+number){
+
+int answer = 1;
+for(int i = 1;i<= number;i++) {
+	answer = answer * i ;
+}
+	
+mv.addObject("number", number+"の階乗は"+answer+"です。");
+mv.setViewName("kaijo");
+return mv;
+}
+
 }
