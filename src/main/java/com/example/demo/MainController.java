@@ -1,4 +1,5 @@
 package com.example.demo;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,6 +64,40 @@ return mv;
 public ModelAndView ifPost(ModelAndView mv) {
 mv.addObject("suzuki","off");
 mv.setViewName("if");
+return mv;
+}
+
+@RequestMapping("/{name}")
+public ModelAndView index(@PathVariable String name, ModelAndView mv) {
+	mv.addObject("name", name);
+	mv.setViewName("index");
+	return mv;
+}
+
+@RequestMapping("/name/{namae}/age/{age}")
+public ModelAndView index(@PathVariable String namae, @PathVariable String age, ModelAndView mv) {
+	mv.addObject("name", namae);
+	mv.addObject("age", age);
+	mv.setViewName("index");
+	return mv;
+}
+
+@RequestMapping(value="/pcc", method=RequestMethod.GET)
+public ModelAndView pccGet(ModelAndView mv) {
+mv.addObject("totalValue","129,800円");
+mv.setViewName("PersonalComputerCustom");
+return mv;
+}
+
+@RequestMapping(value="/pcc", method=RequestMethod.POST)
+public ModelAndView pccPost(ModelAndView mv, @RequestParam("osRadio")int osC,
+@RequestParam("cpuRadio")int cpuC, @RequestParam("memoryRadio")int memoryC, 
+@RequestParam("hddRadio")int hddC) {
+
+	System.out.println(osC+cpuC+memoryC+hddC);
+	
+mv.addObject("totalValue",129800+osC+cpuC+memoryC+hddC+"円");
+mv.setViewName("PersonalComputerCustom");
 return mv;
 }
 

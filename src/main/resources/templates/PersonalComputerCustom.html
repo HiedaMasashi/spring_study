@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link th:href="@{/css/PersonalComputerCustom.css}" rel="stylesheet">
+<title>カスタマイズページ</title>
+</head>
+<body>
+	<h1>カスタマイズ・お見積り</h1>
+	<h2>本体構成</h2>
+	<h2>現在のお値段 ： <p th:text="${totalValue}"></p></h2>
+		<form action="/pcc" method="POST">
+			<div class="os">
+				<h3>OS</h3>
+				<p>現在の構成 ： Windows 10 Home 32ビット</p>
+				<div class="os candidate">
+					<input type="radio" name="osRadio" value="5000">Windows 10 Home 64ビット　+5,000円<br>
+					<input type="radio" name="osRadio" value="10000">Windows 10 Pro 32ビット　+10,000円<br>
+					<input type="radio" name="osRadio" value="15000">Windows 10 Pro 64ビット　+15,000円<br>
+				</div>
+			</div>
+			<div class="cpu">
+				<h3>CPU</h3>
+				<p>現在の構成 ： インテル Core i7-10700 (2.90GHz-4.80GHz/8コア/16スレッド)</p>
+				<div class="cpu candidate">
+					<input type="radio" name="cpuRadio" value="3000">インテル Core i7-10700KF (3.80GHz-5.10GHz/8コア/16スレッド/内蔵グラフィックス非搭載)　+3,000円<br>
+					<input type="radio" name="cpuRadio" value="8980">インテル Core i7-10700K (3.80GHz-5.10GHz/8コア/16スレッド)　+8,980円<br>
+				</div>
+			</div>
+			<div class="memory">
+				<h3>メモリ</h3>
+				<p>現在の構成 ： 16GB DDR4 SDRAM(PC4-21300/8GBx2/2チャネル)</p>
+				<div class="memory candidate">
+					<input type="radio" name="memoryRadio" value="43000">64GB DDR4 SDRAM(PC4-23400/16GBx4/2チャネル)　+43,000円<br>
+					<input type="radio" name="memoryRadio" value="17300">32GB DDR4 SDRAM(PC4-23400/16GBx2/2チャネル)　+17,300円<br>
+				</div>
+			</div>
+			<div class="hdd">
+				<h3>ハードディスク</h3>
+				<p>現在の構成 ： 1TB HDD</p>
+				<div class="hdd candidate">
+					<input type="radio" name="hddRadio" value="7100">2TB HDD　+7,100円<br>
+					<input type="radio" name="hddRadio" value="10300">4TB HDD　+10,300円<br>
+				</div>
+			</div>
+			<input type="submit", value="送信">
+		</form>
+</body>
+</html>
