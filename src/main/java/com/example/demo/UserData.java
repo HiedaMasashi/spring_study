@@ -19,6 +19,9 @@ public class UserData {
 
 	@Column(nullable = false)
 	private String pass;
+	
+	@Column(nullable = false)
+	private String age;
 
 	public long getId() {
 		return id;
@@ -50,6 +53,14 @@ public class UserData {
 
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+	
+	public String getAge() {
+		return age;
+	}
+	
+	public void setAge(String age) {
+		this.age = age;
 	}
 
 }
