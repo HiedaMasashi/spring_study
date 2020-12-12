@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import antlr.collections.List;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -141,7 +141,7 @@ public class MainController {
 
 	@RequestMapping(value = "/userData", method = RequestMethod.GET)
 	public ModelAndView userGet(ModelAndView mv) {
-		java.util.List<UserData> customers = repository.findAll();
+		List<UserData> customers = repository.findAll();
 		mv.addObject("customers", customers);
 		mv.setViewName("userRegistration");
 		return mv;
